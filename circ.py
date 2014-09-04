@@ -526,6 +526,10 @@ class circ:
             self.scroll_image(self.vadjust.step_increment, 0)
         elif event.direction == gtk.gdk.SCROLL_UP:
             self.scroll_image(-self.vadjust.step_increment, 0)
+        elif event.direction == gtk.gdk.SCROLL_LEFT:
+	    self.scroll_image(0, -self.hadjust.step_increment)
+	elif event.direction == gtk.gdk.SCROLL_RIGHT:
+	    self.scroll_image(0, self.hadjust.step_increment)
 
     def button_press_event(self, widget, event):
         """Handles the mouse button press."""
